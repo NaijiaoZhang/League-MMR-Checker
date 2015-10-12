@@ -14,6 +14,17 @@ import main.java.riotapi.RiotApiException;
 import java.util.Scanner;
 
 public class Main{
+    Map<String, Integer> elomap = new Map<String,Integer>();
+    String[] Tiers = {"BRONZE","SILVER","GOLD","PLATINUM","DIAMOND"};
+    String[] Divisions = {"V","IV","III","II","I"};
+    int starting = 800;
+    for(int i = 0; i < Tiers.length; i++){
+        for(int j = 0; j <Divisions ; j++){
+            elomap.put(Tiers[i]+Divisions[j],starting);
+            starting += 800;
+        }
+    }
+    
     public static void main(String[] args) throws RiotApiException {
         Scanner findUsername=new Scanner(System.in);
         System.out.print("What is your summoner name?:");
@@ -56,5 +67,8 @@ public class Main{
     public int[][] elochart(int[][] playeridlist){
 
 
+    }
+    public int mmr(String tier, String Division){
+        return elomap.get(tier+Division);
     }
 }
