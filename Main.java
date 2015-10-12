@@ -21,7 +21,7 @@ public class Main{
     for(int i = 0; i < Tiers.length; i++){
         for(int j = 0; j <Divisions ; j++){
             elomap.put(Tiers[i]+Divisions[j],starting);
-            starting += 800;
+            starting += 70;
         }
     }
     
